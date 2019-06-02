@@ -5,7 +5,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Switch, Route } from 'react-router-dom';
-import { FetchUser, } from './components/FetchUser';
+import FetchUser from './components/FetchUser';
 
 
 function App() {
