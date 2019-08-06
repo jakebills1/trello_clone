@@ -9,24 +9,24 @@ class Navbar extends React.Component {
     if (user) {
       return (
         <NavLinkWrapper>
-          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-            <li>Home</li>
-          </Link>
-          <li onClick={() => handleLogout(this.props.history)}>Logout</li>
+          <Navitem as={Link} to="/"> 
+            Home
+          </Navitem>
+          <Navitem onClick={() => handleLogout(this.props.history)}>Logout</Navitem>
         </NavLinkWrapper>
       );
     } else {
       return (
         <NavLinkWrapper>
-          <Link to="/">
-            <li>Home</li>
-          </Link>
-          <Link to="/login">
-            <li>Login</li>
-          </Link>
-          <Link to="/register">
-            <li>Register</li>
-          </Link>
+          <Navitem>
+            <Link to="/">Home</Link>
+          </Navitem>
+          <Navitem>
+            <Link to="/login">Login</Link>
+          </Navitem>
+          <Navitem>
+            <Link to="/register">Register</Link>
+          </Navitem>
         </NavLinkWrapper>
       );
     }
@@ -43,7 +43,21 @@ export class ConnectedNavbar extends React.Component {
 }
 export default withRouter(ConnectedNavbar);
 const NavLinkWrapper = styled.ul`
-  list-style: none;
+  list-style-type: none;
   color: black;
   text-decoration: none;
+  margin: 0;
+  padding: 0;
+  background-color: #0079bf;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
+const Navitem = styled.li`
+  &:hover {
+    background-color: #5ba4cf;
+  }
 `;
