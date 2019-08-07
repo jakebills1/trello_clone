@@ -9,10 +9,12 @@ class Navbar extends React.Component {
     if (user) {
       return (
         <NavLinkWrapper>
-          <Navitem as={Link} to="/"> 
+          <Navitem as={Link} to="/">
             Home
           </Navitem>
-          <Navitem onClick={() => handleLogout(this.props.history)}>Logout</Navitem>
+          <Navitem onClick={() => handleLogout(this.props.history)}>
+            Logout
+          </Navitem>
         </NavLinkWrapper>
       );
     } else {
