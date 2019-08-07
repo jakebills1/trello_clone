@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-const Container = () => {
-  return <ContainerDiv></ContainerDiv>
+const Container = (props) => {
+  return <ContainerDiv>{props.children}</ContainerDiv>
     
 }
 export default Container;
