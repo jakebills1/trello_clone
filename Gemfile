@@ -11,6 +11,7 @@ gem "devise_token_auth", "~> 1.0.0"
 # devise_token_auth mysteriously does not work with latest version
 group :development, :test do
   gem 'faker'
+  gem 'pry'
 end
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'

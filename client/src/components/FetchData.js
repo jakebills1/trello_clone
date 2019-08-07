@@ -13,6 +13,7 @@ class FetchData extends React.Component {
       axios
         .get("/api/boards")
         .then(res => {
+          debugger;
           setBoards(res.data);
           this.setState({ loaded: true });
         })
