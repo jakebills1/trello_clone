@@ -6,7 +6,6 @@ import Register from "./components/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { Switch, Route } from "react-router-dom";
 import FetchUser from "./components/FetchUser";
-import FetchData from "./components/FetchData";
 import "./App.css";
 import Container from "./components/Container";
 
@@ -15,15 +14,13 @@ function App() {
     <>
       <FetchUser>
         <Navbar />
-        <FetchData>
-          <Container>
-            <Switch>
-              <ProtectedRoute path="/" exact component={Home} />
-              <Route path="/login" exact component={Login} />
-              <Route path="/register" exact component={Register} />
-            </Switch>
-          </Container>
-        </FetchData>
+        <Container>
+          <Switch>
+            <ProtectedRoute path="/" exact component={Home} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/register" exact component={Register} />
+          </Switch>
+        </Container>
       </FetchUser>
     </>
   );
