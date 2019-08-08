@@ -4,6 +4,7 @@ class Board < ApplicationRecord
   def find_lists_and_tasks
     board_hash = Hash.new
     board_hash[:board_title] = self.name
+    board_hash[:board_id] = self.id
     board_hash[:lists] = []
     arr = self.lists.all
     arr.each do |a|
