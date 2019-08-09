@@ -13,7 +13,7 @@ class Home extends React.Component {
   render() {
     const { boards } = this.state;
     return boards ? (
-      <>
+      <ContainerDiv>
         <h1>Your Boards</h1>
         <CardWrapper>
           {boards.map(board => (
@@ -34,9 +34,9 @@ class Home extends React.Component {
             <div>Create a new board</div>
           </NewCard>
         </CardWrapper>
-      </>
+      </ContainerDiv>
     ) : (
-      <div>future spinner</div>
+      <ContainerDiv>future spinner</ContainerDiv>
     );
   }
 }
@@ -70,4 +70,7 @@ const NewCard = styled.div`
   &:hover {
     background-color: rgba(0, 0, 0, 0.2);
   }
+`;
+const ContainerDiv = styled.div`
+  margin: 0 0 20% 20%;
 `;
