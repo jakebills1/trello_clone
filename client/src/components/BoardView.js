@@ -9,17 +9,40 @@ const BoardView = props => {
   } = props;
   return (
     <BoardDiv style={{ fontWeight: "bold", marginLeft: "10px" }}>
-      <h1>{board.board_title}</h1>
+      <h1 style={{ marginLeft: "20px" }}>{board.board_title}</h1>
       <ListsContainer>
         {lists.map(list => {
           return (
             <ListBox>
-              <h2 style={{ marginLeft: "15px" }}>{list.list_name}</h2>
+              <h3 style={{ marginLeft: "15px", marginTop: "8px" }}>
+                {list.list_name}
+              </h3>
               <TaskList>
                 {list.tasks.map(task => {
-                  return <Task>{task.name}</Task>;
+                  return (
+                    <Task>
+                      <span>{task.name}</span>
+                      <span>
+                        <Icon
+                          name="circle"
+                          color={
+                            task.priority === "high"
+                              ? "red"
+                              : task.priority === "medium"
+                              ? "yellow"
+                              : "green"
+                          }
+                        />
+                      </span>
+                    </Task>
+                  );
                 })}
               </TaskList>
+
+              <div>
+                <Icon name="plus" style={{ marginLeft: "10px" }} />
+                <span style={{ padding: "8px" }}>Add Another Task</span>
+              </div>
             </ListBox>
           );
         })}
@@ -51,6 +74,7 @@ const TaskList = styled.div`
 `;
 const Task = styled.div`
   display: flex;
+  justify-content: space-between;
   background-color: white;
   border-radius: 3px;
   margin: 0 8px 8px 8px;
